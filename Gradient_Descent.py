@@ -1,6 +1,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+# Hyper-parameters
+ALPHA = 0.6e-1
+EPOCH = 100
+
 
 def least_error(data):
     """ Prints the constants with the least error """
@@ -37,10 +41,10 @@ def new_const(m, x, y, w, b, alpha):
     """ Uses the derivatives of error to provide new constants """
     dw, db = derivative(m, x, y, w, b)
     new_w = w - (alpha * dw)  # provides the correction to 'w'
-    new_b = b - (alpha * db)  # provides the correction to 'w'
+    new_b = b - (alpha * db)  # provides the correction to 'b'
     return new_w, new_b
 
-
+# Sample dataset
 x_in = np.array([1, 2, 3, 4])
 y_out = np.array([12, 33, 44, 55])
 
@@ -48,9 +52,9 @@ w_arb = 0.0  # slope of the linear model
 b_arb = 0.0  # bias of the linear model
 
 m = x_in.shape[0]  # no. of rows of 'x' input matrix
-learning_constant = 0.6e-1  # learning constant by which the model progress
+learning_constant = ALPHA  # learning constant by which the model progress
 
-num_iter = 100000  # no. of total testing iterations
+num_iter = EPOCH  # no. of total testing iterations
 num_breaks = 10  # no. of breaks
 break_gap = num_iter / num_breaks  # gap between each break
 breaks = []  # iter at which each break occurs
