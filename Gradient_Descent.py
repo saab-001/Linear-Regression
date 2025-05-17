@@ -44,6 +44,7 @@ def new_const(m, x, y, w, b, alpha):
     new_b = b - (alpha * db)  # provides the correction to 'b'
     return new_w, new_b
 
+
 # Sample dataset
 x_in = np.array([1, 2, 3, 4])
 y_out = np.array([12, 33, 44, 55])

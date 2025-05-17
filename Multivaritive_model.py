@@ -12,7 +12,6 @@ y_out = np.array([12, 33, 44, 55])
 # modify X matrix by adding column
 X = np.insert(x_in, 0, values=1, axis=1)
 
-
 Xt = np.linalg.matrix_transpose(X)
 Xt_X_inv = np.linalg.pinv((np.linalg.matmul(Xt, X)))  # Moore-Penrose pseudo-inverse helps tackle with singular matrices
 alpha = np.linalg.matmul(Xt_X_inv, Xt)      # Here alpha = (([X]^t[X])^-1)[X]^t
