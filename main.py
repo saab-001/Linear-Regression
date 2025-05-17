@@ -69,13 +69,12 @@ for n in range(num_iter):
 
 least_error(data=data)  # printing the best model
 
-# ploting the model
-# x = np.linspace(x_in[0], x_in[m - 1], m * 10)
-# y = w_arb * x + b_arb
-#
-# fig, ax = plt.subplots()
-# ax.plot(x, y)
-#
-# plt.scatter(x_in, y_out, c="black")
-#
-# plt.show()
+# plotting the model
+x = np.linspace(x_in[0], x_in[m - 1], m * 10)
+y = w_arb * x + b_arb
+
+fig, ax = plt.subplots()
+ax.plot(x, y)
+plt.scatter(x_in, y_out, c="black")
+
+plt.show()
